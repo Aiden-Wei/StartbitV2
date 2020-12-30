@@ -1,14 +1,14 @@
 {
     "name": "StartbitV2",
     "version": "0.0.1",
-    "description": "Blocks for Hiwonder startbit",
+    "description": "Blocks for Hiwonder StartbitV2",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "main.ts",
+        "StartbitV2.ts",
         "StartbitRGBLight.ts",
         "sendbuffer.asm",
         "_locales/zh/StartbitV2-strings.json",
