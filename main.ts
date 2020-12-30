@@ -2,7 +2,7 @@
  StartbitV2 package
 */
 //% weight=10 icon="\uf013" color=#2896ff
-namespace startbit {
+namespace StartbitV2 {
 
     export enum startbit_Colors {
         //% block="Red"
