@@ -2,6 +2,7 @@
  StartbitV2 package
 */
 //% weight=10 icon="\uf013" color=#2896ff
+//% groups='["PwmServo","BusServo","Motor","ActionGroup","ColorSensor","TouchSensor","LightSensor","LineSensor","MP3", "ASR"]'
 namespace StartbitV2 {
 
     export enum startbit_Colors {
