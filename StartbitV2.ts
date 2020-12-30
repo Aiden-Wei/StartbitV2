@@ -2,7 +2,6 @@
  StartbitV2 package
 */
 //% weight=10 icon="\uf013" color=#2896ff
-//% groups='["PwmServo","BusServo","Motor","ActionGroup","ColorSensor","TouchSensor","LightSensor","LineSensor","MP3", "ASR"]'
 namespace StartbitV2 {
 
     export enum startbit_Colors {
@@ -393,7 +392,7 @@ namespace StartbitV2 {
     //% angle.min=0 angle.max=270
     //% inlineInputMode=inline
     //% subcategory=Servo
-    export function setServo(range:startbit_servorange, index: number = 1, angle: number, duration: number = 300) {
+    export function setPwmServo(range:startbit_servorange, index: number = 1, angle: number, duration: number = 300) {
 	    
         let position = mapRGB(angle, 0, range, 500, 2500);
 
