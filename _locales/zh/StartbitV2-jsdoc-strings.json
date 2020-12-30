@@ -2,7 +2,10 @@
 	"StartbitV2.startbit_Init":"初始化，请在开机时执行",
 	"StartbitV2.startbit_belt_initRGBLight":"初始化灯带，请在开机时执行",
 	"StartbitV2.startbit_init_colorSensor":"初始化颜色传感器，请在开机时执行",
+	"StartbitV2.startbit_convertHandCmd":"转换uHand指令给App",
 	
+	"StartbitV2.setServo":"设置pwm舵机的转动范围，编号指接在StartV2上的端口号，角度，时长指转到指定角度需要的时间，单位毫秒",
+	"StartbitV2.getServosAngle":"获取舵机角度",
 	"StartbitV2.startbit_setBusServo": "设置总线舵机运行，角度范围-120~120",
 	"StartbitV2.startbit_setMotorSpeed":"设置马达1和马达2的速度，速度范围-100到100，可控制坦克车行进和转弯",
 	"StartbitV2.startbit_fan_speed":"控制风扇旋转",
