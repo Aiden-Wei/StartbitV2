@@ -90,8 +90,8 @@ namespace StartbitV2 {
         port1 = 0x01
     }
 
-    let lineFollowPin1: DigitalPin;
-    let lineFollowPin2: DigitalPin;
+    let lineFollowPin1: AnalogPin;
+    let lineFollowPin2: AnalogPin;
     //% weight=88 blockId=lineFollowSensor_init  block="Initialize lineFollowSensor|port %port"
     export function lineFollowSensor_init(port: startbit_lineFollowPort){
         switch (port) {
@@ -126,7 +126,7 @@ namespace StartbitV2 {
         port1 = 0x01
     }
 
-    let knobPin: DigitalPin;
+    let knobPin: AnalogPin;
     //% weight=87 blockId=knobSensor_init  block="Initialize knobSensor|port %port"
     export function knobSensor_init(port: startbit_knobPort){
         switch (port) {
@@ -146,7 +146,7 @@ namespace StartbitV2 {
         port1 = 0x00	    
     }
 
-    let photosensitiveSensorPin1: DigitalPin;
+    let photosensitiveSensorPin1: AnalogPin;
     let photosensitiveSensorPin2: DigitalPin;
     //% weight=81 blockId=photosensitiveSensor_init  block="Initialize photosensitiveSensor|port %port"
     export function photosensitiveSensor_init(port: startbit_PhotosensitiveSensor) {
@@ -165,8 +165,8 @@ namespace StartbitV2 {
         port2
     }
 		
-    let fanPin1: DigitalPin;
-    let fanPin2: DigitalPin;
+    let fanPin1: AnalogPin;
+    let fanPin2: AnalogPin;
     //% weight=86 blockId=fanSensor_init  block="Initialize fanSensor|port %port"
     export function fanSensor_init(port: startbit_fanPort){
         switch (port) {
