@@ -29,11 +29,6 @@ namespace StartbitV2 {
         //% blockId="S1_IN_S2_IN" block="Sensor1 and sensor2 are in black line "
         S1_IN_S2_IN = 0x03
     }
-    
-    export enum startbit_colorSensorPort {
-        //% block="Port 4"
-        port4 = 0x04
-    }
 
     export enum startbit_Servos {
         //% block="servo 1"
@@ -201,7 +196,7 @@ namespace StartbitV2 {
         }	  
     }
 
-    //% weight=88 blockId=ASR_init  block="Initialize ASRModule|port %port"
+    //% weight=87 blockId=ASR_init  block="Initialize ASRModule|port %port"
     export function ASR_init(port: startbit_iic) {
         switch (port) {
             case startbit_iic.port3:
@@ -213,7 +208,7 @@ namespace StartbitV2 {
         }	  
     }
 
-    //% weight=87 blockId=lineFollow_iic_init  block="Initialize lineFollow iic|port %port"
+    //% weight=86 blockId=lineFollow_iic_init  block="Initialize lineFollow iic|port %port"
     export function lineFollow_iic_init(port: startbit_iic) {
         switch (port) {
             case startbit_iic.port3:
@@ -1251,8 +1246,8 @@ namespace StartbitV2 {
     /**
      * Initialize the color sensor,please execute at boot time
      */
-    //% weight=94 blockId=startbit_init_colorSensor block="Initialize color sensor port at %port"
-    export function startbit_init_colorSensor(port: startbit_colorSensorPort) {
+    //% weight=88 blockId=startbit_init_colorSensor block="Initialize color sensor port at %port"
+    export function startbit_init_colorSensor(port: startbit_iic) {
         InitColor();
         enableLightSensor(true);
         control.waitMicros(100);
