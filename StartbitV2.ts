@@ -1277,22 +1277,20 @@ namespace StartbitV2 {
     export function startbit_readLineFollowerStatus(status: startbit_lineFollower): boolean {
         let s1 = 0;
         let s2 = 0;
-        switch (port) {
-            case startbit_lineFollowPort.port1:
-                s1 = pins.analogReadPin(lineFollowPin1);
-                s2 = pins.analogReadPin(lineFollowPin2);
-                s1 = s1 * 255 / 1023;
-                s2 = s2 * 255 / 1023;
-                if (s1 < 200)
-                    s1 = 0;
-                else
-                    s1 = 1;
-                if (s2 < 200)
-                    s2 = 0;
-                else
-                    s2 = 1;
-                break;
-        }
+
+	s1 = pins.analogReadPin(lineFollowPin1);
+	s2 = pins.analogReadPin(lineFollowPin2);
+	s1 = s1 * 255 / 1023;
+	s2 = s2 * 255 / 1023;
+	if (s1 < 200)
+	    s1 = 0;
+	else
+	    s1 = 1;
+	if (s2 < 200)
+	    s2 = 0;
+	else
+	    s2 = 1;
+
         let s = ((1 & s1) << 1) | s2;
         if (s == status) {
             return true;
