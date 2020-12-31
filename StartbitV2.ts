@@ -1371,19 +1371,17 @@ namespace StartbitV2 {
     /**
      * Get the line follower sensor port ad value
      */
-    //% weight=89 blockId=startbit_lineSensorValue blockGap=50 block="Get line follower sensor|port %port|%sensor|ad value"
+    //% weight=89 blockId=startbit_lineSensorValue blockGap=50 block="Get line follower sensor|%sensor|ad value"
     //% subcategory=Sensor
-    export function startbit_lineSensorValue(port: startbit_lineFollowPort, sensor: startbit_LineFollowerSensor): number {
+    export function startbit_lineSensorValue(sensor: startbit_LineFollowerSensor): number {
         let s1 = 0;
         let s2 = 0;
-        switch (port) {
-            case startbit_lineFollowPort.port1:
-                s1 = pins.analogReadPin(AnalogPin.P1);
-                s2 = pins.analogReadPin(AnalogPin.P2);
-                s1 = s1 * 255 / 1023;
-                s2 = s2 * 255 / 1023;
-                break;
-        }
+
+	s1 = pins.analogReadPin(lineFollowPin1);
+	s2 = pins.analogReadPin(lineFollowPin2);
+	s1 = s1 * 255 / 1023;
+	s2 = s2 * 255 / 1023;
+
         if (sensor == startbit_LineFollowerSensor.LFSensor_1) {
             return 255 - s1;
         }
