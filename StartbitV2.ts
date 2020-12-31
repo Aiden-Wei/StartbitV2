@@ -53,9 +53,7 @@ namespace StartbitV2 {
         //% block="Port 1"
         port1 = 0x01,
         //% block="Port 2"
-        port2 = 0x02,
-        //% block="Port 3"
-        port3 = 0x03
+        port2 = 0x02
     }
 
     export enum startbit_lineFollowPort {
@@ -1207,12 +1205,6 @@ namespace StartbitV2 {
                 pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
                 status = pins.digitalReadPin(DigitalPin.P13);
                 break;
-            case startbit_touchKeyPort.port3:
-                if (P14_ad > 0xA)
-                    status = 1
-                else
-                    status = 0;
-                break;
         }
         if (status == 1)
             flag = false;
@@ -1294,12 +1286,6 @@ namespace StartbitV2 {
             case startbit_touchKeyPort.port2:
                 pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
                 status = !pins.digitalReadPin(DigitalPin.P13);
-                break;
-            case startbit_touchKeyPort.port3:
-                if (P14_ad > 0xA)
-                    status = false;
-                else
-                    status = true;
                 break;
         }
         return status;
