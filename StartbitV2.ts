@@ -1335,7 +1335,7 @@ namespace StartbitV2 {
     /**
     * Get the condition of the line follower sensor
     */
-    //% weight=96 blockId=startbit_readLineFollowerStatus blockGap=50 block="Line follower status|%status"
+    //% weight=96 blockId=startbit_readLineFollowerStatus block="Line follower status|%status"
     //% subcategory=Sensor
     export function startbit_readLineFollowerStatus(status: startbit_lineFollower): boolean {
         let s1 = 0;
@@ -1781,7 +1781,7 @@ namespace StartbitV2 {
         return buf[0];
     }
 
-    //% weight=86 blockId=startbit_ASRSETMODE block="Set to |%mode mode"
+    //% weight=85 blockId=startbit_ASRSETMODE block="Set to |%mode mode"
     export function startbit_ASRSETMODE(mode: ASRMode) {
         WireWriteDataArray(ASR_I2C_ADDR, ASR_MODE_ADDR, mode);
     }
@@ -1900,7 +1900,7 @@ namespace StartbitV2 {
 
     const LINE_FOLLOWER_I2C_ADDR = 0x78   
     
-    //% weight=95 blockId=startbit_line_followers block="Line follower %lineFollowerSensor in %LineColor ?"
+    //% weight=95 blockId=startbit_line_followers blockGap=50 block="Line follower %lineFollowerSensor in %LineColor ?"
     //% inlineInputMode=inline
     //% subcategory=Sensor
     export function startbit_line_followers(lineFollowerSensor: startbit_LineFollowerSensors, LineColor: startbit_LineColor): boolean {
