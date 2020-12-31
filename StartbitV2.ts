@@ -1461,7 +1461,6 @@ namespace StartbitV2 {
 
 	pins.setPull(photosensitiveSensorPin2, PinPullMode.PullUp);
 	status = pins.digitalReadPin(photosensitiveSensorPin2);
-	break;
 	    
         if (status == 1)
             flag = false;
