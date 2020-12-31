@@ -151,7 +151,7 @@ namespace StartbitV2 {
     //% weight=81 blockId=photosensitiveSensor_init  block="Initialize photosensitiveSensor|port %port"
     export function photosensitiveSensor_init(port: startbit_PhotosensitiveSensor) {
         switch (port) {
-            case startbit_touchKeyPort.port1:
+            case startbit_PhotosensitiveSensor.port1:
                 photosensitiveSensorPin1 = AnalogPin.P1;
 		photosensitiveSensorPin2 = DigitalPin.P2;
                 break;
