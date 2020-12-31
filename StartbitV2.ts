@@ -934,7 +934,7 @@ namespace StartbitV2 {
      * @param intensity the brightness of the LED, eg: 7
      * @param count the count of the LED, eg: 4
      */
-    //% weight=90 blockId=startbit_digitaltube block="digitaltube|%port|intensity %intensity|LED count %count"
+    //% weight=90 blockId=startbit_digitaltube blockGap=50 block="digitaltube|%port|intensity %intensity|LED count %count"
     export function startbit_digitaltube(port: startbit_digitaltubePort, intensity: number, count: number) {
         Digitaltube = startbit_TM1640create(port, intensity, count);
     }
@@ -1261,7 +1261,7 @@ namespace StartbitV2 {
     /**
 	 *  Color sensor return the color.
 	 */
-    //% weight=100 blockId=startbit_checkCurrentColor block="Current color %color"
+    //% weight=99 blockId=startbit_checkCurrentColor block="Current color %color"
     //% subcategory=Sensor
     export function startbit_checkCurrentColor(color: startbit_Colors): boolean {
         let c = i2cread(APDS9960_CDATAL) + i2cread(APDS9960_CDATAH) * 256;
@@ -1340,7 +1340,7 @@ namespace StartbitV2 {
     /**
     * Get the condition of the line follower sensor
     */
-    //% weight=95 blockId=startbit_readLineFollowerStatus blockGap=50 block="Line follower status|%status"
+    //% weight=96 blockId=startbit_readLineFollowerStatus blockGap=50 block="Line follower status|%status"
     //% subcategory=Sensor
     export function startbit_readLineFollowerStatus(status: startbit_lineFollower): boolean {
         let s1 = 0;
@@ -1393,7 +1393,7 @@ namespace StartbitV2 {
     /**
     * Get the condition of the touch button,press return 1,or return 0
     */
-    //% weight=99 blockId=startbit_touchButton block="Touch button is pressed"    
+    //% weight=100 blockId=startbit_touchButton block="Touch button is pressed"    
     //% subcategory=Sensor
     export function startbit_touchButton(): boolean {
         let status: boolean = false;
@@ -1905,7 +1905,7 @@ namespace StartbitV2 {
 
     const LINE_FOLLOWER_I2C_ADDR = 0x78   
     
-    //% weight=96 blockId=startbit_line_followers block="Line follower %lineFollowerSensor in %LineColor ?"
+    //% weight=95 blockId=startbit_line_followers block="Line follower %lineFollowerSensor in %LineColor ?"
     //% inlineInputMode=inline
     //% subcategory=Sensor
     export function startbit_line_followers(lineFollowerSensor: startbit_LineFollowerSensors, LineColor: startbit_LineColor): boolean {
