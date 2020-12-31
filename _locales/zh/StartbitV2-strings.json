@@ -11,9 +11,9 @@
 	"StartbitV2.lineFollow_iic_init|block":"初始化四路巡线传感器|%port",
 	"StartbitV2.avoidSensor_init|block":"初始化避障传感器|%port",
 
-	"StartbitV2.startbit_iic .port3|block":"接口3",
-	"StartbitV2.startbit_iic .port4|block":"接口4",
-	"StartbitV2.startbit_iic .port6|block":"接口6",
+	"StartbitV2.startbit_iic.port3|block":"接口3",
+	"StartbitV2.startbit_iic.port4|block":"接口4",
+	"StartbitV2.startbit_iic.port6|block":"接口6",
 	
 	"StartbitV2.startbit_setBusServo|block": "设置总线舵机|%port|编号(数组类型) %index|角度(数组类型)(-120~120) %angle|运行时间 %duration",
 	"StartbitV2.startbit_setMotorSpeed|block": "设置电机1速度(-100~100)|%speed1|和电机2|速度 %speed2",
