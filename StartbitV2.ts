@@ -51,7 +51,7 @@ namespace StartbitV2 {
 	
     let echoPin: DigitalPin;
     let trigPin: DigitalPin;
-    //% weight=90 blockId=ultrasonic_init  block="Initialize ultrasonic|port %port"
+    //% weight=91 blockId=ultrasonic_init  block="Initialize ultrasonic|port %port"
     export function ultrasonic_init(port: startbit_ultrasonicPort) {
         switch (port) {
             case startbit_ultrasonicPort.port1:
@@ -73,7 +73,7 @@ namespace StartbitV2 {
     }
 
     let touchSensorPin: DigitalPin;
-    //% weight=89 blockId=touchSensor_init  block="Initialize touchSensor|port %port"
+    //% weight=93 blockId=touchSensor_init  block="Initialize touchSensor|port %port"
     export function touchSensor_init(port: startbit_touchKeyPort) {
         switch (port) {
             case startbit_touchKeyPort.port1:
@@ -92,7 +92,7 @@ namespace StartbitV2 {
 
     let lineFollowPin1: AnalogPin;
     let lineFollowPin2: AnalogPin;
-    //% weight=88 blockId=lineFollowSensor_init  block="Initialize lineFollowSensor|port %port"
+    //% weight=92 blockId=lineFollowSensor_init  block="Initialize lineFollowSensor|port %port"
     export function lineFollowSensor_init(port: startbit_lineFollowPort){
         switch (port) {
             case startbit_lineFollowPort.port1:
@@ -127,7 +127,7 @@ namespace StartbitV2 {
     }
 
     let knobPin: AnalogPin;
-    //% weight=87 blockId=knobSensor_init  block="Initialize knobSensor|port %port"
+    //% weight=99 blockId=knobSensor_init  block="Initialize knobSensor|port %port"
     export function knobSensor_init(port: startbit_knobPort){
         switch (port) {
             case startbit_knobPort.port1:
@@ -148,7 +148,7 @@ namespace StartbitV2 {
 
     let photosensitiveSensorPin1: AnalogPin;
     let photosensitiveSensorPin2: DigitalPin;
-    //% weight=81 blockId=photosensitiveSensor_init  block="Initialize photosensitiveSensor|port %port"
+    //% weight=95 blockId=photosensitiveSensor_init  block="Initialize photosensitiveSensor|port %port"
     export function photosensitiveSensor_init(port: startbit_PhotosensitiveSensor) {
         switch (port) {
             case startbit_PhotosensitiveSensor.port1:
@@ -167,7 +167,7 @@ namespace StartbitV2 {
 		
     let fanPin1: AnalogPin;
     let fanPin2: AnalogPin;
-    //% weight=86 blockId=fanSensor_init  block="Initialize fanSensor|port %port"
+    //% weight=98 blockId=fanSensor_init  block="Initialize fanSensor|port %port"
     export function fanSensor_init(port: startbit_fanPort){
         switch (port) {
             case startbit_fanPort.port1:
@@ -189,7 +189,7 @@ namespace StartbitV2 {
         //% block="Port 6"
         port6 = 0x06
     }	
-    //% weight=85 blockId=MP3_init  block="Initialize MP3Module|port %port"
+    //% weight=89 blockId=MP3_init  block="Initialize MP3Module|port %port"
     export function MP3_init(port: startbit_iic) {
         switch (port) {
             case startbit_iic.port3:
@@ -201,7 +201,7 @@ namespace StartbitV2 {
         }	  
     }
 
-    //% weight=84 blockId=ASR_init  block="Initialize ASRModule|port %port"
+    //% weight=88 blockId=ASR_init  block="Initialize ASRModule|port %port"
     export function ASR_init(port: startbit_iic) {
         switch (port) {
             case startbit_iic.port3:
@@ -213,7 +213,7 @@ namespace StartbitV2 {
         }	  
     }
 
-    //% weight=83 blockId=lineFollow_iic_init  block="Initialize lineFollow iic|port %port"
+    //% weight=87 blockId=lineFollow_iic_init  block="Initialize lineFollow iic|port %port"
     export function lineFollow_iic_init(port: startbit_iic) {
         switch (port) {
             case startbit_iic.port3:
@@ -226,7 +226,7 @@ namespace StartbitV2 {
     }
 	
     let avoidSensorPin: DigitalPin;
-    //% weight=82 blockId=avoidSensor_init  block="Initialize avoidSensor|port %port"
+    //% weight=96 blockId=avoidSensor_init  block="Initialize avoidSensor|port %port"
     export function avoidSensor_init(port: startbit_touchKeyPort) {
         switch (port) {
             case startbit_touchKeyPort.port1:
@@ -934,7 +934,7 @@ namespace StartbitV2 {
      * @param intensity the brightness of the LED, eg: 7
      * @param count the count of the LED, eg: 4
      */
-    //% weight=96 blockId=startbit_digitaltube block="digitaltube|%port|intensity %intensity|LED count %count"
+    //% weight=90 blockId=startbit_digitaltube block="digitaltube|%port|intensity %intensity|LED count %count"
     export function startbit_digitaltube(port: startbit_digitaltubePort, intensity: number, count: number) {
         Digitaltube = startbit_TM1640create(port, intensity, count);
     }
@@ -1251,7 +1251,7 @@ namespace StartbitV2 {
     /**
      * Initialize the color sensor,please execute at boot time
      */
-    //% weight=98 blockId=startbit_init_colorSensor block="Initialize color sensor port at %port"
+    //% weight=94 blockId=startbit_init_colorSensor block="Initialize color sensor port at %port"
     export function startbit_init_colorSensor(port: startbit_colorSensorPort) {
         InitColor();
         enableLightSensor(true);
@@ -1531,7 +1531,7 @@ namespace StartbitV2 {
     /**
 	 * Initialize Light belt
 	 */
-    //% weight=99 blockId=startbit_belt_initRGBLight block="Initialize light belt at port %port"
+    //% weight=97 blockId=startbit_belt_initRGBLight block="Initialize light belt at port %port"
     export function startbit_belt_initRGBLight(port: startbit_ultrasonicPort) {
         switch (port) {
             case startbit_ultrasonicPort.port1:
@@ -1786,7 +1786,7 @@ namespace StartbitV2 {
         return buf[0];
     }
 
-    //% weight=96 blockId=startbit_ASRSETMODE block="Set to |%mode mode"
+    //% weight=86 blockId=startbit_ASRSETMODE block="Set to |%mode mode"
     export function startbit_ASRSETMODE(mode: ASRMode) {
         WireWriteDataArray(ASR_I2C_ADDR, ASR_MODE_ADDR, mode);
     }
