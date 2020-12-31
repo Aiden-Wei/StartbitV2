@@ -63,6 +63,7 @@ namespace StartbitV2 {
                 trigPin = DigitalPin.P13;
                 break;
         }
+    }
 	
     export enum startbit_touchKeyPort {
         //% block="Port 1"
@@ -82,6 +83,7 @@ namespace StartbitV2 {
                 touchSensorPin = DigitalPin.P13;
                 break;
         }
+    }
 	    
     export enum startbit_lineFollowPort {
         //% block="Port 1"
@@ -97,7 +99,8 @@ namespace StartbitV2 {
                 lineFollowPin1 = AnalogPin.P1;
 		lineFollowPin2 = AnalogPin.P2;
                 break;
-        }	    
+        }
+    }
 	    
     export enum startbit_PinIOStatus {
         //% block="Low"
@@ -130,7 +133,8 @@ namespace StartbitV2 {
             case startbit_knobPort.port1:
                 knobPin = AnalogPin.P1;
                 break;
-        }	    
+        }	
+    }
 	    
     export enum startbit_photosensitivePort {
         //% block="Port 1"
@@ -162,7 +166,8 @@ namespace StartbitV2 {
                 fanPin1 = AnalogPin.P13;
 		fanPin2 = AnalogPin.P14;	
                 break;
-        }	    
+        }	  
+    }
 	    
     export enum startbit_servorange {
         //% block="180"
