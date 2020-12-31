@@ -52,7 +52,7 @@ namespace StartbitV2 {
     let echoPin: DigitalPin;
     let trigPin: DigitalPin;
     //% weight=90 blockId=ultrasonic_init  block="Initialize ultrasonic|port %port"
-    export function ultrasonic_init(port: startbit_ultrasonicPort): number {
+    export function ultrasonic_init(port: startbit_ultrasonicPort) {
         switch (port) {
             case startbit_ultrasonicPort.port1:
                 echoPin = DigitalPin.P2;
@@ -74,7 +74,7 @@ namespace StartbitV2 {
 
     let touchSensorPin: DigitalPin;
     //% weight=89 blockId=touchSensor_init  block="Initialize touchSensor|port %port"
-    export function touchSensor_init(port: startbit_touchKeyPort): number {
+    export function touchSensor_init(port: startbit_touchKeyPort) {
         switch (port) {
             case startbit_touchKeyPort.port1:
                 touchSensorPin = DigitalPin.P1;
@@ -93,7 +93,7 @@ namespace StartbitV2 {
     let lineFollowPin1: DigitalPin;
     let lineFollowPin2: DigitalPin;
     //% weight=88 blockId=lineFollowSensor_init  block="Initialize lineFollowSensor|port %port"
-    export function lineFollowSensor_init(port: startbit_lineFollowPort): number {
+    export function lineFollowSensor_init(port: startbit_lineFollowPort){
         switch (port) {
             case startbit_lineFollowPort.port1:
                 lineFollowPin1 = AnalogPin.P1;
@@ -127,8 +127,8 @@ namespace StartbitV2 {
     }
 
     let knobPin: DigitalPin;
-    //% weight=88 blockId=knobSensor_init  block="Initialize knobSensor|port %port"
-    export function knobSensor_init(port: startbit_knobPort): number {
+    //% weight=87 blockId=knobSensor_init  block="Initialize knobSensor|port %port"
+    export function knobSensor_init(port: startbit_knobPort){
         switch (port) {
             case startbit_knobPort.port1:
                 knobPin = AnalogPin.P1;
@@ -146,6 +146,18 @@ namespace StartbitV2 {
         port1 = 0x00	    
     }
 
+    let photosensitiveSensorPin1: DigitalPin;
+    let photosensitiveSensorPin2: DigitalPin;
+    //% weight=81 blockId=photosensitiveSensor_init  block="Initialize photosensitiveSensor|port %port"
+    export function photosensitiveSensor_init(port: startbit_PhotosensitiveSensor) {
+        switch (port) {
+            case startbit_touchKeyPort.port1:
+                photosensitiveSensorPin1 = AnalogPin.P1;
+		photosensitiveSensorPin2 = DigitalPin.P2;
+                break;
+        }
+    }
+	
     export enum startbit_fanPort {
         //% block="Port 1"
         port1,
@@ -155,8 +167,8 @@ namespace StartbitV2 {
 		
     let fanPin1: DigitalPin;
     let fanPin2: DigitalPin;
-    //% weight=88 blockId=fanSensor_init  block="Initialize fanSensor|port %port"
-    export function fanSensor_init(port: startbit_fanPort): number {
+    //% weight=86 blockId=fanSensor_init  block="Initialize fanSensor|port %port"
+    export function fanSensor_init(port: startbit_fanPort){
         switch (port) {
             case startbit_fanPort.port1:
                 fanPin1 = AnalogPin.P1;
@@ -168,7 +180,64 @@ namespace StartbitV2 {
                 break;
         }	  
     }
-	    
+
+    export enum startbit_iic {
+        //% block="Port 3"
+        port3 = 0x03,
+        //% block="Port 4"
+        port4 = 0x04,
+        //% block="Port 6"
+        port6 = 0x06
+    }	
+    //% weight=85 blockId=MP3_init  block="Initialize MP3Module|port %port"
+    export function MP3_init(port: startbit_iic) {
+        switch (port) {
+            case startbit_iic.port3:
+                break;
+            case startbit_iic.port4:	
+                break;
+            case startbit_iic.port6:	
+                break;
+        }	  
+    }
+
+    //% weight=84 blockId=ASR_init  block="Initialize ASRModule|port %port"
+    export function ASR_init(port: startbit_iic) {
+        switch (port) {
+            case startbit_iic.port3:
+                break;
+            case startbit_iic.port4:	
+                break;
+            case startbit_iic.port6:	
+                break;
+        }	  
+    }
+
+    //% weight=83 blockId=lineFollow_iic_init  block="Initialize lineFollow iic|port %port"
+    export function lineFollow_iic_init(port: startbit_iic) {
+        switch (port) {
+            case startbit_iic.port3:
+                break;
+            case startbit_iic.port4:	
+                break;
+            case startbit_iic.port6:	
+                break;
+        }	  
+    }
+	
+    let avoidSensorPin: DigitalPin;
+    //% weight=82 blockId=avoidSensor_init  block="Initialize avoidSensor|port %port"
+    export function avoidSensor_init(port: startbit_touchKeyPort) {
+        switch (port) {
+            case startbit_touchKeyPort.port1:
+                avoidSensorPin = DigitalPin.P1;
+                break;
+            case startbit_touchKeyPort.port2:
+                avoidSensorPin = DigitalPin.P13;
+                break;
+        }
+    }
+	
     export enum startbit_servorange {
         //% block="180"
         range1 = 180,
@@ -1251,21 +1320,15 @@ namespace StartbitV2 {
     /**
     * Get the obstacle avoidance sensor status,1 detect obstacle,0 no detect obstacle
     */
-    //% weight=97 blockId=startbit_avoidSensor block="Obstacle avoidance sensor|port %port|detect obstacle"
+    //% weight=97 blockId=startbit_avoidSensor block="Obstacle avoidance sensor|detect obstacle"
     //% subcategory=Sensor
-    export function startbit_avoidSensor(port: startbit_touchKeyPort): boolean {
+    export function startbit_avoidSensor(): boolean {
         let status = 0;
         let flag: boolean = false;
-        switch (port) {
-            case startbit_touchKeyPort.port1:
-                pins.setPull(DigitalPin.P1, PinPullMode.PullUp);
-                status = pins.digitalReadPin(DigitalPin.P1);
-                break;
-            case startbit_touchKeyPort.port2:
-                pins.setPull(DigitalPin.P13, PinPullMode.PullUp);
-                status = pins.digitalReadPin(DigitalPin.P13);
-                break;
-        }
+
+	pins.setPull(avoidSensorPin, PinPullMode.PullUp);
+	status = pins.digitalReadPin(avoidSensorPin);
+
         if (status == 1)
             flag = false;
         else
@@ -1381,10 +1444,10 @@ namespace StartbitV2 {
     /**
     * Get the ad value of the photosensitive moudule
     */
-    //% weight=91 blockId=startbit_getphotosensitiveValue  block="Get Photosensitive|port %port|value(0~255)"
+    //% weight=91 blockId=startbit_getphotosensitiveValue  block="Get Photosensitive|value(0~255)"
     //% subcategory=Sensor
-    export function startbit_getphotosensitiveValue(port: startbit_photosensitivePort): number {
-        let adValue = pins.analogReadPin(AnalogPin.P1);
+    export function startbit_getphotosensitiveValue(): number {
+        let adValue = pins.analogReadPin(photosensitiveSensorPin1);
         adValue = adValue * 255 / 1023;
         return 255 - adValue;
     }
@@ -1392,17 +1455,16 @@ namespace StartbitV2 {
     /**
     * Get the Photosensitive sensor status,1 detect bright,0 no detect bright
     */
-    //% weight=98 blockId=startbit_photosensitiveSensor block="Photosensitive sensor|port %port|detect bright"
+    //% weight=98 blockId=startbit_photosensitiveSensor block="Photosensitive sensor|detect bright"
     //% subcategory=Sensor
-    export function startbit_photosensitiveSensor(port: startbit_PhotosensitiveSensor): boolean {
+    export function startbit_photosensitiveSensor(): boolean {
         let status = 0;
         let flag: boolean = false;
-        switch (port) {
-            case startbit_PhotosensitiveSensor.port1:
-                pins.setPull(DigitalPin.P2, PinPullMode.PullUp);
-                status = pins.digitalReadPin(DigitalPin.P2);
-                break;
-        }
+
+	pins.setPull(photosensitiveSensorPin2, PinPullMode.PullUp);
+	status = pins.digitalReadPin(photosensitiveSensorPin2);
+	break;
+	    
         if (status == 1)
             flag = false;
         else
