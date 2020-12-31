@@ -562,7 +562,7 @@ namespace StartbitV2 {
     /**
     *	Set the speed of the number 1 motor and number 2 motor, range of -100~100, that can control the tank to go advance or turn of.
     */
-    //% weight=96 blockId=startbit_setMotorSpeed  block="Set motor1 speed(-100~100)|%speed1|and motor2|speed %speed2"
+    //% weight=96 blockId=startbit_setMotorSpeed blockGap=50 block="Set motor1 speed(-100~100)|%speed1|and motor2|speed %speed2"
     //% speed1.min=-100 speed1.max=100
     //% speed2.min=-100 speed2.max=100
     //% subcategory=Servo
@@ -585,7 +585,7 @@ namespace StartbitV2 {
     /**
     *	Set the speed of the fan, range of -100~100.
     */
-    //% weight=95 blockId=startbit_setFanSpeed  blockGap=50 block="Set |%port fan speed(-100~100)|%speed1"
+    //% weight=95 blockId=startbit_setFanSpeed block="Set |%port fan speed(-100~100)|%speed1"
     //% speed1.min=-100 speed1.max=100
     //% subcategory=Servo
     export function startbit_setFanSpeed(port: startbit_fanPort, speed1: number) {
