@@ -1333,16 +1333,8 @@ namespace StartbitV2 {
     //% subcategory=Sensor
     export function startbit_touchButton(): boolean {
         let status: boolean = false;
-        switch (port) {
-            case startbit_touchKeyPort.port1:
-                pins.setPull(touchSensorPin, PinPullMode.PullUp);
-                status = !pins.digitalReadPin(touchSensorPin);
-                break;
-            case startbit_touchKeyPort.port2:
-                pins.setPull(touchSensorPin, PinPullMode.PullUp);
-                status = !pins.digitalReadPin(touchSensorPin);
-                break;
-        }
+        pins.setPull(touchSensorPin, PinPullMode.PullUp);
+        status = !pins.digitalReadPin(touchSensorPin);
         return status;
     }
 
