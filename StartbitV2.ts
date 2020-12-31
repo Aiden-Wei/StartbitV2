@@ -491,49 +491,49 @@ namespace StartbitV2 {
     }
 
 	
-    /**
-     * Send read startbit servos angle command
-     */
-    //% weight=99 blockId=startbit_readAngle block="Send |%servo|angle command "
-    //% subcategory=Servo
-    export function startbit_readAngle(servo: startbit_Servos) {
-        let buf = pins.createBuffer(6);
-        buf[0] = 0x55;
-        buf[1] = 0x55;
-        buf[2] = 0x04;
-        buf[3] = 0x3E;//cmd type
-        buf[4] = 0x05;
-        buf[5] = servo;
-        serial.writeBuffer(buf);
-    }
+//     /**
+//      * Send read startbit servos angle command
+//      */
+//     //% weight=99 blockId=startbit_readAngle block="Send |%servo|angle command "
+//     //% subcategory=Servo
+//     export function startbit_readAngle(servo: startbit_Servos) {
+//         let buf = pins.createBuffer(6);
+//         buf[0] = 0x55;
+//         buf[1] = 0x55;
+//         buf[2] = 0x04;
+//         buf[3] = 0x3E;//cmd type
+//         buf[4] = 0x05;
+//         buf[5] = servo;
+//         serial.writeBuffer(buf);
+//     }
 
 
-    /**
-     * Do someting when Startbit receive angle
-     * @param body code to run when event is raised
-     */
-    //% weight=97 blockId=onStartbit_getAngle blockGap=50 block="on Startbit|%servo|get angle"
-    //% subcategory=Servo
-    export function onStartbit_getAngle(servo: startbit_Servos, body: Action) {
-        control.onEvent(MESSAGE_ANGLE, servo, body);
-    }
+//     /**
+//      * Do someting when Startbit receive angle
+//      * @param body code to run when event is raised
+//      */
+//     //% weight=97 blockId=onStartbit_getAngle blockGap=50 block="on Startbit|%servo|get angle"
+//     //% subcategory=Servo
+//     export function onStartbit_getAngle(servo: startbit_Servos, body: Action) {
+//         control.onEvent(MESSAGE_ANGLE, servo, body);
+//     }
 
 
-    /**
-     *  Get servos angle
-     */
-    //% weight=98 blockId=getServosAngle block="Get|%servo|angle(-120~120)"
-    //% subcategory=Servo
-    export function getServosAngle(servo: startbit_Servos): number {
-        if (servo == startbit_Servos.Servo1) {
-            return servo1Angle;
-        }
-        else if (servo == startbit_Servos.Servo2) {
-            return servo2Angle;
-        }
-        else
-            return 0xFFF;
-    }
+//     /**
+//      *  Get servos angle
+//      */
+//     //% weight=98 blockId=getServosAngle block="Get|%servo|angle(-120~120)"
+//     //% subcategory=Servo
+//     export function getServosAngle(servo: startbit_Servos): number {
+//         if (servo == startbit_Servos.Servo1) {
+//             return servo1Angle;
+//         }
+//         else if (servo == startbit_Servos.Servo2) {
+//             return servo2Angle;
+//         }
+//         else
+//             return 0xFFF;
+//     }
     
     /**
      *  Send robot attitude to the servo controller
